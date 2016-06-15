@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+brew update
+brew upgrade --all
+
+# Build & Languages
+brew install pkg-config
+brew install cmake
+brew install ninja
+brew install mono
+
+# Utilities
+brew install coreutils
+brew install moreutils
+brew install findutils
+brew install augeas
+brew install wget --with-iri
+brew install imagemagick
+brew install the_silver_searcher
+brew install gnup
+brew install socat
+brew install ngrok
+brew install curl
+brew install p7zip
+brew install krb5
+brew install tree
+
+# Python
+brew install python
+brew install python3
+
+# Databases
+brew install postgresql
+brew install mysql
+
+# Editors
+brew tap neovim/neovim
+brew install --HEAD --with-release neovim
+brew install macvim --force --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python2
+
+pip install neovim
+pip3 install neovim
+
+# Docker
+brew install docker
+brew install docker-compose
+
+# Golang
+brew install go
+
