@@ -1,15 +1,23 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
+    ~/.vim: vim
+    ~/.vimrc: vim/vimrc
+    ~/.gvimrc: vim/gvimrc
+    ~/.zsh: zsh
+    ~/.zshrc: zsh/zshrc
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
         path: ssh/config
         create: true
-    ~/.vim/vimrc:
-        path: vim/vimrc
-        create: true
-    ~/.zshrc: zshrc
 
+- shell:
+    - [git submodule update --init --recursive, Install submodules]
+    - [cd vim && ./install && cd .., Install vim]
 

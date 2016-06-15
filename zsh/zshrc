@@ -1,0 +1,62 @@
+#
+# User configuration sourced by interactive shells
+#
+
+# Load antigen
+source ~/.zsh/antigen.zsh
+
+# Use oh-my-zsh as base
+antigen use oh-my-zsh
+
+# Plugins
+antigen bundles <<EOBUNDLES
+	osx
+	git
+
+
+	zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+# Configurations
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export MANPATH="/usr/local/man:$MANPATH"
+
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
+export EDITOR=nvim
+
+unsetopt share_history
+
+# rbenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# nodenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# hub
+eval "$(hub alias -s)"
+
+# golang
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$PATH
+
+# Local bin
+export PATH=$HOME/.local/bin:$PATH
+
+# iTerm2
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# Travis
+[ -f /Users/jonathanlima/.travis/travis.sh ] && source /Users/jonathanlima/.travis/travis.sh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases
+
+
+# Theme
+source ~/.zsh/dracula.zsh-theme
+ 
