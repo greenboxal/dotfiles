@@ -1,7 +1,7 @@
 
 src() { cd ~/src/$1 }
 
-github() {
+srcgh() {
 	if [ ! -d ~/src/github.com/$1 ]; then
 		mkdir -p ~/src/github.com
 		cd ~/src/github.com
@@ -11,5 +11,5 @@ github() {
 	src github.com/$1
 }
 
-srcpg() { src github.com/pagarme/$1 }
+srcpg() { srcgh pagarme/$1 }
 
