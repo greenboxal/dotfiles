@@ -1,0 +1,66 @@
+Host devbox.pagarme.net
+	ControlMaster auto
+	ControlPath /tmp/ssh_mux_%h_%p_%r
+	ControlPersist 900s
+	ForwardAgent yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	GSSAPITrustDNS no
+
+Host gwx
+	HostName gwx.gboxnet.ga
+	ControlMaster auto
+	ControlPath /tmp/ssh_mux_%h_%p_%r
+	ControlPersist 900s
+	ForwardAgent yes
+	DynamicForward 2001
+	User greenboxal
+
+Host jumpbox
+	HostName jumpbox.internal.pagar.me
+	ControlMaster auto
+	ControlPath /tmp/ssh_mux_%h_%p_%r
+	ControlPersist 900s
+	ForwardAgent yes
+
+Host bunker
+	HostName bunker.internal.pagar.me
+	IdentityFile ~/.ssh/bunker
+	ForwardAgent yes
+
+Host *.aws.pagarme.net
+	ProxyCommand ssh -W %h:%p jumpbox
+	ForwardAgent yes
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	GSSAPITrustDNS no
+	ForwardX11 yes
+	ForwardX11Trusted yes
+
+Host pg.*
+	ProxyCommand ssh -W %h:%p jumpbox
+
+Host pg.router
+	HostName 172.31.17.167
+
+Host pg.notificator
+	HostName 172.31.50.192
+
+Host pg.api-prod-prod
+	HostName 172.31.50.191
+
+Host pg.api-prod-test
+	HostName 172.31.50.64
+
+Host pg.integrator
+	HostName 172.31.64.254
+
+Host pg.api-staging-test
+	HostName 172.31.41.249
+
+Host pg.shield-prod
+	HostName 172.31.50.167
+
+Host pg.webman
+	HostName 172.31.48.45
+
