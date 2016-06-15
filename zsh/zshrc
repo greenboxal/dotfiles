@@ -26,6 +26,7 @@ export LC_ALL=$LANG
 export EDITOR=nvim
 
 unsetopt share_history
+unsetopt AUTO_CD
 
 # rbenv
 export PATH="$HOME/.nodenv/bin:$PATH"
@@ -55,7 +56,14 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Aliases
+source ~/.zsh/aliases.zsh
 
+alias gs="git status"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcm="git commit -m"
+alias gu="git pull --rebase"
+alias gp="git push"
 
 # Theme
 source ~/.zsh/dracula.zsh-theme

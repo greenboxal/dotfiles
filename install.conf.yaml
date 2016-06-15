@@ -20,4 +20,5 @@
 - shell:
     - [git submodule update --init --recursive, Install submodules]
     - [cd vim && ./install.sh && cd .., Install vim]
+    - [./postinstall, Running postinstall script]
 
