@@ -24,6 +24,7 @@ brew install curl
 brew install p7zip
 brew install krb5
 brew install tree
+brew install fzf
 
 # Python
 brew install python
