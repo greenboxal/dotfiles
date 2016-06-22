@@ -1,10 +1,12 @@
-
 src() { cd ~/src/$1 }
 
 srcgh() {
-	if [ ! -d ~/src/github.com/$1 ]; then
-		mkdir -p ~/src/github.com
-		cd ~/src/github.com
+	fp=~/src/github.com/$1
+	bp=$(dirname $fp)
+
+	if [ ! -d $fp ]; then
+		mkdir -p $bp
+		cd $bp
 		hub clone $1
 	fi
 
@@ -13,3 +15,12 @@ srcgh() {
 
 srcpg() { srcgh pagarme/$1 }
 
+dco() {
+	if [ -f './script/docker-compose-noconflict' ]; then
+		script/docker-compose-noconflict $*
+	else
+		docker-compose $*
+	fi
+}
+
+alias vim=nvim

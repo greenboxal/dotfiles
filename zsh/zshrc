@@ -12,7 +12,10 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
 	osx
 	git
-
+	github
+	docker
+	docker-compose
+	httpie
 
 	zsh-users/zsh-syntax-highlighting
 EOBUNDLES
@@ -57,13 +60,6 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 # Aliases
 source ~/.zsh/aliases.zsh
-
-alias gs="git status"
-alias gc="git commit"
-alias gca="git commit --amend"
-alias gcm="git commit -m"
-alias gu="git pull --rebase"
-alias gp="git push"
 
 # Theme
 source ~/.zsh/dracula.zsh-theme
