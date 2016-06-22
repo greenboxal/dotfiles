@@ -1,0 +1,6 @@
+*.swp
+plugins/
+!plugins/tpm
+resurrect/
+tags
+
