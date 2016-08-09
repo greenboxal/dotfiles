@@ -15,6 +15,8 @@ srcgh() {
 
 srcpg() { srcgh pagarme/$1 }
 
+srcgb() { srcgh greenboxal/$1 }
+
 dco() {
 	if [ -f './script/docker-compose-noconflict' ]; then
 		script/docker-compose-noconflict $*
