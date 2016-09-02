@@ -39,6 +39,9 @@ eval "$(nodenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# kiex
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 # hub
 eval "$(hub alias -s)"
 
