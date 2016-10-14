@@ -7,10 +7,15 @@
 - link:
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux.conf.local: tmux/tmux.conf.local
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
+    ~/.config/nvim: vim
+        create: true
+    ~/.config/omf: omf
+        create: true
+    ~/.config/fish: fish
+        create: true
     ~/.zsh: zsh
     ~/.zshrc: zsh/zshrc
     ~/.bash_profile: bash_profile
@@ -21,6 +26,7 @@
         create: true
 
 - shell:
+    - [fish -c 'omf install', Install fish]
     - [git submodule update --init --recursive, Install submodules]
     - [cd vim && ./install.sh && cd .., Install vim]
     - [./postinstall, Running postinstall script]
