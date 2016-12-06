@@ -25,4 +25,8 @@ dco() {
 	fi
 }
 
+alias tfplan="terraform plan"
+alias tfapply="terraform apply"
+alias tfls="terraform state list"
+
 alias vim=nvim

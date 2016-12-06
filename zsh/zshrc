@@ -52,6 +52,9 @@ export PATH=$GOPATH/bin:$PATH
 # Local bin
 export PATH=$HOME/.local/bin:$PATH
 
+# Local dotfiles bin
+export PATH=$HOME/.bin:$PATH
+
 # iTerm2
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 

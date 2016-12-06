@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir -p ~/.ssh
+cat ~/.dotfiles/ssh/conf.d/* > ~/.ssh/config
+

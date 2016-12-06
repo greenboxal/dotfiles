@@ -1,4 +1,8 @@
 #!/bin/bash
 
+# Create directories
 mkdir -p ~/bin ~/src ~/lib
+
+# Update sshconfig
+~/.dotfiles/ssh/update_ssh
 

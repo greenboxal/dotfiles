@@ -1,0 +1,68 @@
+#!/bin/bash
+
+set -m
+
+get_current() {
+	artist=`osascript -e'tell application "iTunes"' -e'get artist of current track' -e'end tell'`
+	title=`osascript -e'tell application "iTunes"' -e'get name of current track' -e'end tell'`
+
+	echo "${artist} - ${title}"
+}
+
+show() {
+	artist=`osascript -e'tell application "iTunes"' -e'get artist of current track' -e'end tell'`
+	title=`osascript -e'tell application "iTunes"' -e'get name of current track' -e'end tell'`
+	song=`curl -s --get "https://makeitpersonal.co/lyrics" --data-urlencode "artist=$artist" --data-urlencode "title=$title"`
+
+	echo -e "$artist - $title\n$song"
+}
+
+stream() {
+	last=""
+	sock=$1
+	pid=$2
+
+	while true; do
+		sleep 1
+
+		current=$(get_current)
+
+		if [ "$last" != "$current" ]; then
+			kill -9 $(cat $pid)
+			show > $sock
+		fi
+
+		last=$current
+	done
+}
+
+if [ "$1" == "-f" ]; then
+	control=$(mktemp -d)
+	sock="$control/sock"
+	pid="$control/pid"
+
+	mkfifo $sock
+
+	stream $sock $pid &
+	stream_pid=$?
+
+	while true; do
+		less -f $sock &
+		echo $! > $pid
+
+		fg 2
+		result=$?
+
+		if [ "$result" == "0" ]; then
+			break
+		fi
+	done
+
+	kill -9 $stream_pid
+	rm -rf $control
+
+	exit 0
+else
+	show | less
+fi
+

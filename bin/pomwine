@@ -1,0 +1,8 @@
+#!/bin/bash
+export WINEROOT="/Applications/PlayOnMac.app/Contents/Resources/unix/wine"
+export PATH=$PATH:$WINEROOT/bin
+export WINEPREFIX="/Users/jonathanlima/PlayOnMac's virtual drives/$1"
+export WINEDEBUG="-all"
+shift
+wine $@
+

@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.bin: bin
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
