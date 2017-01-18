@@ -25,6 +25,7 @@ dco() {
 	fi
 }
 
+alias tfval="terraform validate"
 alias tfplan="terraform plan"
 alias tfapply="terraform apply"
 alias tfls="terraform state list"
