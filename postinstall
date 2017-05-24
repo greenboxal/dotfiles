@@ -4,5 +4,5 @@
 mkdir -p ~/bin ~/src ~/lib
 
 # Update sshconfig
-~/.dotfiles/ssh/update_ssh
+# ~/.dotfiles/ssh/update_ssh
 

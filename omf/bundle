@@ -3,10 +3,12 @@ package bundler
 package exenv
 package fzf
 package gem
+package gityaw
 package grc
 package hub
 package iex
 package nodenv
 package osx
 package rbenv
+package rustup
 theme default
