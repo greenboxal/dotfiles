@@ -28,6 +28,16 @@ export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 export EDITOR=nvim
 
+# golang
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$PATH
+
+# Local bin
+export PATH=$HOME/.local/bin:$PATH
+
+# Local dotfiles bin
+export PATH=$HOME/.bin:$PATH
+
 unsetopt share_history
 unsetopt AUTO_CD
 
@@ -39,21 +49,15 @@ eval "$(nodenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="`yarn global bin`:$PATH"
+
 # kiex
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 # hub
 eval "$(hub alias -s)"
-
-# golang
-export GOPATH=$HOME
-export PATH=$GOPATH/bin:$PATH
-
-# Local bin
-export PATH=$HOME/.local/bin:$PATH
-
-# Local dotfiles bin
-export PATH=$HOME/.bin:$PATH
 
 # iTerm2
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

@@ -17,13 +17,7 @@ srcpg() { srcgh pagarme/$1 }
 
 srcgb() { srcgh greenboxal/$1 }
 
-dco() {
-	if [ -f './script/docker-compose-noconflict' ]; then
-		script/docker-compose-noconflict $*
-	else
-		docker-compose $*
-	fi
-}
+srchc() { srcgh hashicorp/$1 }
 
 alias tfval="terraform validate"
 alias tfplan="terraform plan"
