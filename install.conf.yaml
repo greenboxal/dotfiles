@@ -11,11 +11,14 @@
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
-    ~/.config/nvim: vim
+    ~/.config/nvim:
+        path: vim
         create: true
-    ~/.config/omf: omf
+    ~/.config/omf:
+        path: omf
         create: true
-    ~/.config/fish: fish
+    ~/.config/fish:
+        path: fish
         create: true
     ~/.zsh: zsh
     ~/.zshrc: zsh/zshrc
