@@ -3,6 +3,12 @@
 brew update
 brew upgrade --all
 
+# Helpers
+brew install reattach-to-user-namespace
+
+# Shells
+brew install fish
+
 # Build & Languages
 brew install pkg-config
 brew install cmake
@@ -29,10 +35,6 @@ brew install fzf
 # Python
 brew install python
 brew install python3
-
-# Databases
-brew install postgresql
-brew install mysql
 
 # Editors
 brew tap neovim/neovim
